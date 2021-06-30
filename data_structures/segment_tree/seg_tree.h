@@ -3,7 +3,7 @@
 #include "node.h" // To get the definition of node
 namespace OOP_Competitive_Programming {
 
-    template<typename T>
+    template<typename T = int>
     class seg_tree {
 
     private:
@@ -12,13 +12,13 @@ namespace OOP_Competitive_Programming {
     
         // Class representing a node on the tree
         template<typename U>
-        class node; 
+        class Node; 
         
         // Root node
-        node<T> *root;
+        Node<T> *root;
 
         //Function for getting the value from the child
-        T *f (T, T);
+        T *calc_value (T, T);
 
     public:
 

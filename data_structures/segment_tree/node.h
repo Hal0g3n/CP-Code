@@ -5,29 +5,35 @@ namespace OOP_Competitive_Programming {
     
     template<typename T>
     template<typename U>
-    class seg_tree<T>::node {
+    class seg_tree<T>::Node {
 
         // Start and end of segment
-        int s, e; 
+        int start, end; 
         
         // Value contained by the segment
         U value;  
 
         // Left and Right child
-        node<U> *l, *r;
+        Node<U> *l, *r;
 
         // No Default Ctor
-        node() = delete;
+        Node() = delete;
 
         // No Copy Ctor
-        node(node<U> const&) = delete; 
+        Node(Node<U> const&) = delete; 
 
-        // Only this Ctor
-        node(int, int);
+        // Default Init nodes
+        Node(int, int);
+
+        // Value Init nodes
+        Node(initializer_list<T>);
+
+        // Destructor
+        ~Node();
 
         void update(int, U);
 
-        U query(int, int);
+        U query(int = start, int = end);
             
     };
 
