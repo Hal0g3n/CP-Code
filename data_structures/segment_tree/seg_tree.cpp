@@ -29,7 +29,12 @@ namespace OOP_Competitive_Programming {
         }
 
         // Creates array of all nodes
-        root = new Node
+        root = new Node(s, e);
+    }
+
+    template<typename T>
+    seg_tree<T>::~seg_tree() {
+        delete root;
     }
 
 }

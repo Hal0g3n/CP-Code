@@ -66,5 +66,11 @@ namespace OOP_Competitive_Programming {
 
         return calc_value(left, right);
     }
-
+    
+    template<typename T>
+    template<typename U>
+    seg_tree<T>::Node<U>::~Node() {
+        delete l;
+        delete r;
+    }
 }
